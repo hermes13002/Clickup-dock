@@ -1,25 +1,41 @@
 # ClickUp Dock
 
-ClickUp Dock is a VS Code extension that brings your ClickUp tasks directly into your coding environment, so you can update your status and write your weekly reports without having to open a browser or switch contexts.
+Manage ClickUp tasks and dispatch reports directly from your sidebar.
 
-## Why this was built
+ClickUp Dock is a VS Code extension designed to bring your ClickUp workspace directly into your coding environment. This tool was built to stop the endless context switching between your IDE and browser just to update a task status or log a weekly report. 
 
-I created this tool because constantly switching between the IDE and ClickUp just to update a task status or log a weekly report was interrupting my workflow. With ClickUp Dock, you can see your current tasks in the sidebar, change their status as you work, and draft your weekly reports directly from your editor. When you are ready, you can submit the report directly to the activity feed of your designated project task.
+With ClickUp Dock, your tasks live where you work.
 
-## Key Features
+## Features
 
-- **Live Task Board:** See your ClickUp tasks in the sidebar while you work.
-- **Update Task Statuses:** Click a task to change its status using the options configured for your specific list.
-- **Auto-Refresh:** The extension refreshes your tasks in the background, and there is a timer in the status bar so you always know when the next update is coming.
-- **Write and Send Reports:** Draft your weekly report in the built-in webview. When you are done, select your target project and it will be posted directly as a comment in ClickUp.
+### Live Task Board
+See all your current ClickUp tasks right in the VS Code Activity Bar. The board gives you a clean overview of your workload without cluttering your workspace.
 
-## Getting Started
+![Task Board Placeholder](https://raw.githubusercontent.com/hermes13002/Clickup-dock/main/resources/placeholder1.png)
 
-1. Open the command palette and run "ClickUp Dock: Set ClickUp Token". Enter your personal API token.
-2. The sidebar will populate with your tasks. 
-3. Open the "Draft Report" panel in the sidebar, click the configure button, and select the specific Space and List where your projects are tracked.
-4. You are ready to go. You can now draft your reports and post them directly to your project tasks.
+### Update Task Statuses on the Fly
+Click on any task to instantly change its status. The extension pulls the exact custom statuses configured for your ClickUp list, so you always have the right options available.
 
-## Privacy
+### Background Auto-Refresh
+The extension seamlessly refreshes your tasks in the background. A non-intrusive timer sits in your status bar so you always know when the next update is coming.
 
-Everything runs locally on your machine. Your personal ClickUp token is stored securely in VS Code's native secret storage, and there is no intermediate backend server handling your data.
+### Built-in Report Drafting
+Draft your weekly reports or daily standups in the built-in webview. When you are done, simply select your target project and the extension will post your report directly to that project's activity feed as a comment.
+
+![Draft Report Placeholder](https://raw.githubusercontent.com/hermes13002/Clickup-dock/main/resources/placeholder2.png)
+
+## Installation and Setup
+
+1. Search for **ClickUp Dock** in the VS Code Marketplace and click Install.
+2. Open the command palette and run `ClickUp Dock: Set ClickUp Token`. 
+3. Enter your personal ClickUp API token. This token stays securely on your machine.
+4. Open the Draft Report panel in the sidebar, click the configure button, and select the specific Space and List where your projects are tracked.
+5. You are all set!
+
+## Privacy and Security
+
+Everything runs locally on your machine. Your personal ClickUp token is stored securely in VS Code's native encrypted secret storage. There is no intermediate backend server or tracking handling your data.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

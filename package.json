@@ -1,9 +1,21 @@
 {
   "name": "clickup-dock",
   "displayName": "ClickUp Dock",
-  "publisher": "clickup-dock-dev",
-  "description": "Task management and weekly reporting via ClickUp",
-  "version": "0.0.1",
+  "publisher": "excelsior01",
+  "description": "Manage ClickUp tasks and dispatch reports directly from your sidebar",
+  "version": "0.0.2",
+  "author": "excelsior01",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hermes13002/Clickup-dock.git"
+  },
+  "keywords": [
+    "clickup",
+    "tasks",
+    "productivity",
+    "management",
+    "reports"
+  ],
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -89,8 +101,9 @@
     "pretest": "npm run compile && npm run lint"
   },
   "devDependencies": {
-    "@types/vscode": "^1.80.0",
     "@types/node": "18.x",
+    "@types/vscode": "^1.80.0",
+    "sharp": "^0.35.4",
     "typescript": "^5.1.3"
   },
   "dependencies": {
