@@ -3,7 +3,7 @@
   "displayName": "ClickUp Dock",
   "publisher": "excelsior01",
   "description": "Manage ClickUp tasks and dispatch reports directly from your sidebar",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "author": "excelsior01",
   "repository": {
     "type": "git",
@@ -22,6 +22,10 @@
   "categories": [
     "Other"
   ],
+  "activationEvents": [
+    "onView:clickupDock.tasksView",
+    "onView:clickupDock.reportDraftView"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "viewsContainers": {
@@ -33,6 +37,13 @@
         }
       ]
     },
+    "viewsWelcome": [
+      {
+        "view": "clickupDock.tasksView",
+        "contents": "Welcome to ClickUp Dock!\n\nTo get started, please set your ClickUp API token.\n\nHow to get your token:\n1. Go to ClickUp Settings\n2. Click on Apps\n3. Copy your Personal API Token\n\n[Set ClickUp Token](command:clickupDock.setToken)",
+        "when": "!clickupDock.hasToken"
+      }
+    ],
     "views": {
       "clickupDock-sidebar": [
         {

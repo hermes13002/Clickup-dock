@@ -13,6 +13,8 @@ export async function activate(context: vscode.ExtensionContext) {
 
     // Initialize Service with Token if exists
     const token = await context.secrets.get('clickupDock.clickupToken');
+    vscode.commands.executeCommand('setContext', 'clickupDock.hasToken', !!token);
+    
     if (token) {
         clickupService.setToken(token);
     }
@@ -38,6 +40,7 @@ export async function activate(context: vscode.ExtensionContext) {
         if (input) {
             await context.secrets.store('clickupDock.clickupToken', input);
             clickupService.setToken(input);
+            vscode.commands.executeCommand('setContext', 'clickupDock.hasToken', true);
             vscode.window.showInformationMessage('ClickUp Token saved successfully!');
             taskTreeProvider.refresh();
             startAutoRefresh(taskTreeProvider);
@@ -125,15 +128,7 @@ export async function activate(context: vscode.ExtensionContext) {
         }
     }));
 
-    // Auto prompt if no token, else start refresh
-    if (!token) {
-        vscode.window.showInformationMessage('Welcome to ClickUp Dock! Please set your ClickUp token to get started.', 'Set Token')
-            .then(selection => {
-                if (selection === 'Set Token') {
-                    vscode.commands.executeCommand('clickupDock.setToken');
-                }
-            });
-    } else {
+    if (token) {
         startAutoRefresh(taskTreeProvider);
     }
 

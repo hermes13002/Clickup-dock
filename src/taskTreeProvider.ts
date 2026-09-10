@@ -17,7 +17,7 @@ export class TaskTreeProvider implements vscode.TreeDataProvider<TaskTreeItem> {
 
     async getChildren(element?: TaskTreeItem): Promise<TaskTreeItem[]> {
         if (!clickupService.hasToken()) {
-            return [new TaskTreeItem("Please set your ClickUp Token (Click here or run command)", vscode.TreeItemCollapsibleState.None, 'auth')];
+            return [];
         }
 
         if (element) {
