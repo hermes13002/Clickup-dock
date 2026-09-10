@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="topGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b620e0" />
+      <stop offset="100%" stop-color="#f7b733" />
+    </linearGradient>
+    <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8A2BE2" />
+      <stop offset="100%" stop-color="#00BFFF" />
+    </linearGradient>
+  </defs>
+
+  <g stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    
+    <!-- Laptop Base Top Edge -->
+    <path d="M 24 204 L 232 204" /> 
+    
+    <!-- Laptop Base Outline -->
+    <path d="M 12 204 L 244 204 A 12 12 0 0 1 256 216 A 8 8 0 0 1 248 224 L 8 224 A 8 8 0 0 1 0 216 A 12 12 0 0 1 12 204 Z" />
+    
+    <!-- Touchpad indent -->
+    <path d="M 104 204 L 104 208 A 4 4 0 0 0 108 212 L 148 212 A 4 4 0 0 0 152 208 L 152 204" />
+    
+    <!-- Outer Screen (left side) -->
+    <path d="M 32 204 L 32 64 A 16 16 0 0 1 48 48 L 76 48" />
+    <!-- Outer Screen (right side) -->
+    <path d="M 180 48 L 208 48 A 16 16 0 0 1 224 64 L 224 204" />
+    
+    <!-- Inner Screen (left side) -->
+    <path d="M 52 204 L 52 76 A 8 8 0 0 1 60 68 L 76 68" />
+    <!-- Inner Screen (right side) -->
+    <path d="M 180 68 L 196 68 A 8 8 0 0 1 204 76 L 204 204" />
+
+    <!-- Document Outline -->
+    <rect x="76" y="24" width="104" height="180" rx="8" />
+
+    <!-- Document Text Lines -->
+    <line x1="96" y1="144" x2="160" y2="144" />
+    <line x1="96" y1="164" x2="160" y2="164" />
+    <line x1="96" y1="184" x2="140" y2="184" />
+  </g>
+
+  <!-- ClickUp Logo inside the Document -->
+  <g transform="translate(96.5, 48) scale(0.45)">
+    <path d="M 0 70 L 70 0 L 140 70" fill="none" stroke="url(#topGradient)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 0 115 A 70 70 0 0 0 140 115" fill="none" stroke="url(#bottomGradient)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+</svg>
