@@ -2,6 +2,13 @@
 
 All notable changes to the ClickUp Dock extension will be documented in this file.
 
+## [0.0.6]
+- Fixed a bug where missing dependencies caused the extension to fail silently on startup.
+- Implemented a safety fallback for API token storage to support third-party and web-based IDEs that lack native encrypted SecretStorage (like Antigravity IDE and Gitpod).
+
+## [0.0.5]
+- Added `onStartupFinished` activation event to ensure the background auto-refresh timer wakes up correctly.
+
 ## [0.0.4]
 - Added step-by-step instructions to the Welcome View on how to retrieve the ClickUp token.
 

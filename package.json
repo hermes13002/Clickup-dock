@@ -3,7 +3,7 @@
   "displayName": "ClickUp Dock",
   "publisher": "excelsior01",
   "description": "Manage ClickUp tasks and dispatch reports directly from your sidebar",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "author": "excelsior01",
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "Other"
   ],
   "activationEvents": [
+    "onStartupFinished",
     "onView:clickupDock.tasksView",
     "onView:clickupDock.reportDraftView"
   ],

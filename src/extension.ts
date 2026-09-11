@@ -12,7 +12,12 @@ export async function activate(context: vscode.ExtensionContext) {
     console.log('ClickUp Dock extension activated!');
 
     // Initialize Service with Token if exists
-    const token = await context.secrets.get('clickupDock.clickupToken');
+    let token: string | undefined;
+    try {
+        token = await context.secrets.get('clickupDock.clickupToken');
+    } catch (e) {
+        token = context.globalState.get<string>('clickupDock.clickupToken');
+    }
     vscode.commands.executeCommand('setContext', 'clickupDock.hasToken', !!token);
     
     if (token) {
@@ -38,7 +43,11 @@ export async function activate(context: vscode.ExtensionContext) {
         });
 
         if (input) {
-            await context.secrets.store('clickupDock.clickupToken', input);
+            try {
+                await context.secrets.store('clickupDock.clickupToken', input);
+            } catch (e) {
+                await context.globalState.update('clickupDock.clickupToken', input);
+            }
             clickupService.setToken(input);
             vscode.commands.executeCommand('setContext', 'clickupDock.hasToken', true);
             vscode.window.showInformationMessage('ClickUp Token saved successfully!');
